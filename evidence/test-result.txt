@@ -1,0 +1,6 @@
+ColorCC fix base test — 2026-11-15 16:45
+APK SHA-256: 5b34988a2c6f8945fc2dc0ca6096b879313f2a49f76fdd8543490f3642962a01
+Recording: screenrecord ~120 fps, 8 s, notification shade with media playing
+Crop: x=20..1420, y=300..800 (media card)
+Result: frames=1032 min=65.88 max=67.74 median=66.30 single_frame_drops=0
+Before: single-frame drop ~10-15 luma points every ~1.0 s (see evidence/flicker-dark-frame.png)

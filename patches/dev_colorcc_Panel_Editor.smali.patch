@@ -1,0 +1,11 @@
+--- orig-src/smali/dev/colorcc/Panel$Editor.smali	2026-11-15 16:47:36.717998347 -0300
++++ final-src/smali/dev/colorcc/Panel$Editor.smali	2026-11-15 16:37:54.113998570 -0300
+@@ -1583,7 +1583,7 @@
+     move-result-object v5
+ 
+     .line 6778
+-    const-string v6, "Made by Guest"
++    const-string v6, "Made by DuduSync"
+ 
+     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+ 

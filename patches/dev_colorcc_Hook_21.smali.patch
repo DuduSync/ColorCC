@@ -1,0 +1,13 @@
+--- orig-src/smali/dev/colorcc/Hook$21.smali	2026-11-15 16:47:36.221998347 -0300
++++ final-src/smali/dev/colorcc/Hook$21.smali	2026-11-15 16:38:30.205998556 -0300
+@@ -342,6 +342,10 @@
+ 
+     .line 612
+     :cond_b
++    invoke-virtual {v11}, Ldev/colorcc/Glass;->note()Ldev/colorcc/Glass;
++
++    move-result-object v11
++
+     invoke-virtual {v11, v1}, Ldev/colorcc/Glass;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
+ 
+     .line 613

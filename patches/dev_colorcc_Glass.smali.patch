@@ -1,0 +1,68 @@
+--- orig-src/smali/dev/colorcc/Glass.smali	2026-11-15 16:47:36.257998347 -0300
++++ final-src/smali/dev/colorcc/Glass.smali	2026-11-15 16:42:30.797998464 -0300
+@@ -2,6 +2,8 @@
+ .super Landroid/graphics/drawable/Drawable;
+ .source "Glass.java"
+ 
++.field private notif:Z
++
+ # interfaces
+ .implements Landroid/graphics/drawable/Drawable$Callback;
+ 
+@@ -2610,6 +2612,39 @@
+ 
+     move-result v3
+ 
++    iget-boolean v5, v0, Ldev/colorcc/Glass;->notif:Z
++
++    if-eqz v5, :base_done
++
++    sget v5, Ldev/colorcc/Glass;->look:I
++
++    if-nez v5, :base_done
++
++    iget-object v5, v0, Ldev/colorcc/Glass;->body:Landroid/graphics/Paint;
++
++    sget-boolean v6, Ldev/colorcc/Glass;->dark:Z
++
++    if-nez v6, :base_dark
++
++    const v6, 0xffe8e8e8
++
++    goto :base_color
++
++    :base_dark
++    const v6, 0xff202020
++
++    :base_color
++    invoke-virtual {v5, v6}, Landroid/graphics/Paint;->setColor(I)V
++
++    const/16 v6, 0xff
++
++    invoke-virtual {v5, v6}, Landroid/graphics/Paint;->setAlpha(I)V
++
++    iget-object v6, v0, Ldev/colorcc/Glass;->rect:Landroid/graphics/RectF;
++
++    invoke-virtual {v1, v6, v3, v3, v5}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
++
++    :base_done
+     .line 525
+     iget-object v2, v0, Ldev/colorcc/Glass;->flood:Landroid/graphics/Paint;
+ 
+@@ -3073,6 +3108,16 @@
+     return-void
+ .end method
+ 
++.method note()Ldev/colorcc/Glass;
++    .locals 1
++
++    const/4 v0, 0x1
++
++    iput-boolean v0, p0, Ldev/colorcc/Glass;->notif:Z
++
++    return-object p0
++.end method
++
+ .method steady()Ldev/colorcc/Glass;
+     .locals 1
+ 
